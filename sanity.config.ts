@@ -68,16 +68,14 @@ export default defineConfig({
     dashboardTool({
       widgets: [
         netlifyWidget({
-          title: 'Deploy changes to the Nrityagram Website (production)',
+          title: 'Deploy changes to the Production Website (production)',
           sites: [
             {
               title: "Click on DEPLOY to upload changes to nrityagram.org. When Deploy is a 'Success', click on 'View' to view the site",
-              apiId: 'b28148ef-dfcd-4a73-a483-5311b7d03ae4',
-              // https://api.netlify.com/build_hooks/65ba0dfc9611e3ab5710b25f
-              buildHookId: '65ba0dfc9611e3ab5710b25f',
-              name: 'ngmain',
-              // TODO: change to this url: 'http://nrityagram.org/'
-              url: 'https://ngremix.netlify.app/'
+              apiId: 'abcdefgh-abcd-1234-1234-123456789012',
+              buildHookId: 'somecrazyalphanumeric',
+              name: 'nameofhook',
+              url: 'https://url-of-site-on-netlify'
             }
           ],
           layout: { width: 'medium', height: 'auto' }
@@ -90,7 +88,7 @@ export default defineConfig({
         projectUsersWidget({ layout: { width: 'medium', height: 'auto' } }),
         documentListWidget({
           title: 'Last Edited Content (with unpublished changes)',
-          query: '*[_type in ["page", "homepage", "contactPage", "navigation"] && (_id in path("drafts.**"))] | order(_updatedAt desc)',
+          query: '*[_type in ["page", "homepage", "contactDetails", "navigation"] && (_id in path("drafts.**"))] | order(_updatedAt desc)',
           layout: { width: 'medium' }
         }),
       ]
