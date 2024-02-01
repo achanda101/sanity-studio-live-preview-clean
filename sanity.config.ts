@@ -11,6 +11,9 @@ import { presentationTool, DocumentLocationResolver } from '@sanity/presentation
 import { Observable, map } from 'rxjs'
 
 import { deskStructure } from './deskStructure'
+import { BrandLogo } from './components/brandLogo'
+import { EnhancedNavbar } from './components/enhancedNavbar'
+import { ngTheme } from './theme'
 
 export const projectId = process.env.SANITY_STUDIO_PROJECT_ID!
 export const dataset = process.env.SANITY_STUDIO_DATASET!
@@ -101,5 +104,12 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
+  },
+  theme: ngTheme,
+  studio: {
+    components: {
+      logo: BrandLogo,
+      navbar: EnhancedNavbar,
+    },
   },
 })
